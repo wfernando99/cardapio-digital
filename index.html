@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Digital</title>
+
+  <!-- Fonte Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Cardápio</h1>
+      <button id="toggleTheme">Modo Escuro</button>
+    </div>
+  </header>
+
+  <!-- CATEGORIAS + BUSCA -->
+  <nav class="container">
+    <ul class="categories">
+      <li data-category="todos"  class="active">Todos</li>
+      <li data-category="burgers">Burgers</li>
+      <li data-category="pizzas">Pizzas</li>
+      <li data-category="bebidas">Bebidas</li>
+    </ul>
+
+    <div id="searchFilter">
+      <input id="searchInput" placeholder="Pesquisar item…">
+    </div>
+  </nav>
+
+  <!-- PRODUTOS -->
+  <main class="container">
+    <section id="products" class="product-list"></section>
+  </main>
+
+  <!-- BOTTOM BAR -->
+  <div id="bottomBar" class="hidden">
+    <strong>Subtotal&nbsp;R$&nbsp;<span id="bottomSubtotal">0,00</span></strong>
+    <button id="openCartBtn">Ver Sacola (0)</button>
+  </div>
+
+  <!-- OVERLAY + DRAWER -->
+  <div id="drawerOverlay" class="hidden"></div>
+
+  <aside id="cartDrawer" class="hidden">
+    <h2>Sacola</h2>
+    <div id="cartItemsDrawer"></div>
+
+    <div id="cartTotalDrawer">
+      Total&nbsp;R$&nbsp;<span id="cartTotalDrawerValue">0,00</span>
+    </div>
+
+    <button id="goCheckoutBtn">Finalizar Pedido</button>
+  </aside>
+
+  <!-- CHECKOUT -->
+  <section id="checkoutSection" class="hidden container">
+    <h2>Checkout</h2>
+    <form id="checkoutForm">
+      <label>Nome
+        <input id="nome" required>
+      </label>
+
+      <label>Endereço
+        <input id="endereco" required>
+      </label>
+
+      <label>Pagamento
+        <select id="pagamento" required>
+          <option value="">Selecione</option>
+          <option>Dinheiro</option>
+          <option>Cartão</option>
+          <option>Pix</option>
+        </select>
+      </label>
+
+      <div id="trocoSection" class="hidden">
+        <label>Troco para
+          <input id="troco" class="money-mask" type="text" inputmode="numeric">
+        </label>
+      </div>
+
+      <button type="submit">Enviar WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- TOAST -->
+  <div id="toast" class="hidden"></div>
+
+  <script src="app.js"></script>
+  <head>
+   …
++  <link rel="manifest" href="manifest.json">
++  <meta name="theme-color" content="#ff5c5c">
+ </head>
+</body>
+</html>
